@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>We've Seen This War Before | By Yvonne Okker-Padilla</title>
+  <meta name="description" content="A daughter of Vietnam sees history repeating in the 2026 Iran conflict — and begs Congress to wake up.">
+  <meta property="og:title" content="We've Seen This War Before">
+  <meta property="og:description" content="A daughter of Vietnam sees history repeating — and begs Congress to wake up.">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deep: #0a0a0a;
+      --bg-surface: #111111;
+      --bg-card: #1a1a1a;
+      --text-primary: #e8e4df;
+      --text-secondary: #a09a92;
+      --text-muted: #6b665f;
+      --accent: #c4945a;
+      --accent-dim: #8a6a3e;
+      --rule: #2a2723;
+      --serif: 'Playfair Display', Georgia, serif;
+      --body: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg-deep);
+      color: var(--text-primary);
+      font-family: var(--body);
+      font-size: 19px;
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 50% 40%, rgba(196,148,90,0.06) 0%, transparent 70%),
+        linear-gradient(180deg, var(--bg-deep) 0%, #0d0b09 100%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+    }
+
+    .hero-label {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.3s forwards;
+    }
+
+    .hero-title {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.5s forwards;
+    }
+
+    .hero-subtitle {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.7s forwards;
+    }
+
+    .hero-byline {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      opacity: 0;
+      animation: fadeUp 1s ease 0.9s forwards;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      opacity: 0;
+      animation: fadeUp 1s ease 1.2s forwards;
+    }
+
+    .hero-scroll a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-muted);
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+
+    .hero-scroll a:hover { color: var(--accent); }
+
+    .hero-scroll svg {
+      width: 20px;
+      height: 20px;
+      animation: bobDown 2s ease-in-out infinite;
+    }
+
+    /* ===== ARTICLE ===== */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    .article-container p {
+      margin-bottom: 1.5rem;
+      color: var(--text-primary);
+      font-optical-sizing: auto;
+    }
+
+    .article-container p:first-of-type::first-letter {
+      font-family: var(--serif);
+      font-size: 4.2rem;
+      font-weight: 900;
+      float: left;
+      line-height: 0.8;
+      margin: 0.1em 0.12em 0 0;
+      color: var(--accent);
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 3.5rem 0 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .pull-quote {
+      margin: 3rem 0;
+      padding: 2rem 0 2rem 2rem;
+      border-left: 3px solid var(--accent);
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.6;
+      color: var(--accent);
+    }
+
+    .emphasis-line {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    /* ===== CLOSING ===== */
+    .closing-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--rule);
+    }
+
+    .closing-questions {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      text-align: center;
+      margin: 2rem 0;
+      line-height: 1.7;
+    }
+
+    .closing-final {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--text-primary);
+      margin: 3rem 0;
+    }
+
+    /* ===== AUTHOR BIO ===== */
+    .author-bio {
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: var(--bg-card);
+      border-radius: 4px;
+      border: 1px solid var(--rule);
+    }
+
+    .author-bio p {
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 0;
+    }
+
+    .author-bio strong {
+      color: var(--text-primary);
+    }
+
+    /* ===== CTA ===== */
+    .cta-section {
+      margin-top: 4rem;
+      padding: 3rem 2.5rem;
+      background: linear-gradient(135deg, rgba(196,148,90,0.08) 0%, rgba(196,148,90,0.02) 100%);
+      border: 1px solid var(--accent-dim);
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .cta-section h3 {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      font-family: var(--sans);
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .cta-phone {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+      text-align: center;
+      border-top: 1px solid var(--rule);
+    }
+
+    footer p {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bobDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      body { font-size: 17px; }
+      .article-container { padding: 2.5rem 1.25rem 4rem; }
+      .section-heading { font-size: 1.4rem; }
+      .pull-quote { font-size: 1.2rem; padding-left: 1.25rem; }
+      .hero { padding: 3rem 1.5rem; }
+      .cta-section { padding: 2rem 1.5rem; }
+      .author-bio { padding: 1.5rem; }
+    }
+
+    /* Print styles */
+    @media print {
+      body { background: white; color: black; font-size: 11pt; }
+      .hero { min-height: auto; padding: 2rem 0; }
+      .hero::before { display: none; }
+      .hero-title { color: black; font-size: 2rem; }
+      .hero-subtitle { color: #444; }
+      .article-container { padding: 1rem 0; }
+      .cta-section, .hero-scroll { display: none; }
+      .section-heading { border-top-color: #ccc; color: black; }
+      .pull-quote { color: #555; border-left-color: #999; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="hero-content">
+      <p class="hero-label">A Personal Essay and Plea</p>
+      <h1 class="hero-title">We've Seen This<br>War Before</h1>
+      <p class="hero-subtitle">A Daughter of Vietnam Sees History Repeating&nbsp;&mdash;<br>and Begs Congress to Wake&nbsp;Up</p>
+      <p class="hero-byline">By Yvonne Okker-Padilla &nbsp;&middot;&nbsp; March 5, 2026</p>
+    </div>
+    <div class="hero-scroll">
+      <a href="#essay">
+        Read
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- ESSAY -->
+  <article class="article-container" id="essay">
+
+    <p class="reveal">My father served two tours in Vietnam, but he would never speak of his experiences there. Whatever he saw, whatever he endured, he locked it away so completely those stories are gone forever&nbsp;&mdash; buried with him when he died at 66 years old. He gave 20 years to the Army, retired, and shut the door on Vietnam for good.</p>
+
+    <p class="reveal">He tried going to the VA. He was never identified as a disabled veteran, even though his PTSD was severe and untreated for his entire life. My mother lived with it. All five of his daughters lived with it. He had finally&nbsp;&mdash; <em>finally</em>&nbsp;&mdash; reached some measure of peace when prostate cancer came, a condition the VA now recognizes as directly linked to Agent Orange exposure. He won the battle. Then leukemia took him. He was 66 years old. Too young. Too soon. Vietnam followed my father home, moved into our house and shaped our entire family for decades. The war didn't end when the last helicopter left Saigon. It just moved into American living rooms and stayed.</p>
+
+    <p class="reveal">The war came home with my dad and settled into the walls of our house for decades. My mother, my sisters and I didn't just witness his struggle&nbsp;&mdash; we absorbed it, carried it and were shaped by it in ways we're still untangling. Nobody called it PTSD back then. Nobody told military families what to expect or where to find help. We just survived it. It wasn't until his 50s he found some peace after decades of mostly anger that masked so much more. And when he did, it was his grandchildren who brought it. He was a different man with them&nbsp;&mdash; gentle in a way I hadn't seen growing up.</p>
+
+    <p class="reveal">He was sent to fight a war starting under false pretenses, escalating without clear objectives, expanding without boundaries, and lasting 20 years. By the time it ended, 58,000 Americans were dead, over two million Vietnamese had perished and the nation was so deeply divided, the wounds took a generation to begin healing. And the dying didn't stop when the war did. Veterans like my father kept falling for decades afterward&nbsp;&mdash; to cancers caused by Agent Orange, to PTSD going undiagnosed and untreated, to a country unable to care for the people it had sent into the fire. My father never received compensation for what being in Vietnam did to him. Neither did my mother, an Army veteran herself who saw the effects of the war when injured soldiers came home, and who carried the weight of his silent suffering alongside her own. Neither did the five of us girls, who grew up in a home shaped by a war none of us chose.</p>
+
+    <p class="reveal">I am not writing this as a Democrat. I am not writing this as a Republican. I am writing this as one of five daughters of a Vietnam veteran, as a mother of four, a grandmother of four, and as a woman who spent 25 years as an educator&nbsp;&mdash; teaching young people to think critically, to recognize patterns, and to have the courage to speak up when something is wrong.</p>
+
+    <p class="reveal emphasis-line">Something is very wrong. And we have seen it before.</p>
+
+    <!-- SIX DAYS -->
+    <h2 class="section-heading reveal">Six Days That Should Alarm Every American</h2>
+
+    <p class="reveal">On February 28, 2026, the United States and Israel launched a massive military campaign against Iran. In six days, the conflict has killed at least 1,230 people in Iran&nbsp;&mdash; including more than 150 schoolgirls killed in a single strike on an elementary school&nbsp;&mdash; and six American service members have given their lives. Iran has launched more than 500 ballistic missiles and 2,000 drones in retaliation. Israeli and American strikes have hit residential neighborhoods, hospitals and a UNESCO World Heritage site in Tehran. The World Health Organization has documented 13 attacks on Iranian health infrastructure. Iran's internet has been blacked out for over 100 hours, cutting off 88 million people from the outside world. The Defense Secretary declared &ldquo;America is winning&rdquo; and promised more to come.</p>
+
+    <p class="reveal">The conflict is metastasizing daily. A U.S. submarine sank an Iranian warship off Sri Lanka&nbsp;&mdash; the first torpedo fired at an enemy vessel since World War II. NATO forces shot down an Iranian missile heading toward Turkey, the first time this conflict has directly threatened a NATO member. Drones struck Azerbaijan. Qatar is evacuating residents near the U.S. Embassy. An Iranian drone strike shut down Qatar's liquefied natural gas exports, triggering a potential energy crisis from India to Italy. The Strait of Hormuz&nbsp;&mdash; through which one-fifth of the world's oil passes&nbsp;&mdash; is effectively closed.</p>
+
+    <p class="reveal">The same week, American forces began joint combat operations in Ecuador, the latest escalation in a pattern including strikes on suspected drug boats killing over 150 people across the Caribbean and Eastern Pacific, and the military capture of Venezuela's president.</p>
+
+    <p class="reveal emphasis-line">None of this was authorized by Congress.</p>
+
+    <p class="reveal">This is not about left or right. This is about life and death. This is about whether we, as Americans, have learned anything at all from the wars already breaking our families and our country.</p>
+
+    <!-- THE PATTERN -->
+    <h2 class="section-heading reveal">The Pattern My Father Would Recognize</h2>
+
+    <p class="reveal">If my father were alive today, he would recognize exactly what is happening. Not because he was a political man. Because he lived it.</p>
+
+    <p class="reveal">Vietnam began with a lie. In August 1964, the government told the American people that North Vietnamese torpedo boats attacked U.S. destroyers in the Gulf of Tonkin. Congress responded with near-unanimous approval of a resolution giving the president sweeping war authority. The second attack never happened. Intelligence was deliberately manipulated. Commander James Stockdale, who was there, later said they were &ldquo;about to launch a war under false pretenses.&rdquo;</p>
+
+    <p class="reveal">The Iran conflict began with shifting justifications. First it was nuclear weapons. Then protest crackdowns. Then &ldquo;imminent threats.&rdquo; Then open regime change. American intelligence reports have indicated claims about Iranian long-range ballistic missiles were unfounded, with such capabilities not expected before 2035. The UN's nuclear watchdog confirmed Iran was not days or weeks from having atomic weapons. When the reason for a war keeps changing, it usually means the real reason can't survive public scrutiny. We saw this in 1964 with the Gulf of Tonkin. We saw it in 2003 with Iraq's weapons of mass destruction. We are seeing it again today. This is not a partisan observation. Presidents of both parties have taken this country to war under questionable pretenses. The pattern belongs to the institution of unchecked executive power, not to any one party.</p>
+
+    <!-- BLANK CHECK -->
+    <h2 class="section-heading reveal">The Blank Check, Again</h2>
+
+    <p class="reveal">The Gulf of Tonkin Resolution passed with only two dissenting votes. Congress handed one man a blank check to wage war, trusting he would come back for approval. He never did. That unchecked authority put over 500,000 American troops on the ground and kept them there for years.</p>
+
+    <p class="reveal">The War Powers Resolution of 1973 was built because of Vietnam. It exists for exactly this moment. On March 4, 2026, the Senate voted 47&ndash;53 not to use it. This was the eighth failed war powers vote since June. The eighth time Congress chose not to exercise the authority the Constitution gives it.</p>
+
+    <p class="reveal">Let me be clear: This is a failure crossing party lines and spanning decades. Both parties have spent years ceding war powers to the executive branch&nbsp;&mdash; under presidents of both parties. Each time Congress looked away, it made the next unilateral action easier. What is different now is the scale. This is a full-scale war against a nation of 88 million people, launched while Congress was out of session, without a formal declaration, and without clearly defined objectives.</p>
+
+    <div class="pull-quote reveal">&ldquo;You can't be halfway pregnant. We're in there,&rdquo; said a sitting U.S. senator, justifying his vote against the War Powers Resolution. That is not how democracy works. That is how democracies fail.</div>
+
+    <!-- SLOW SLIDE -->
+    <h2 class="section-heading reveal">The Slow Slide Into Forever</h2>
+
+    <p class="reveal">My father didn't deploy into a war of 500,000 troops. Vietnam started with 900 military advisors in 1960. Then small deployments. Then a bombing campaign that was supposed to be temporary. Then ground troops. Then more ground troops. Each step was framed as a necessary response to the last. The door to escalation never closed.</p>
+
+    <p class="reveal">The current trajectory follows the same arc. Sanctions. Houthi strikes. A limited air campaign in June 2025. And now, a full-scale war hitting over a thousand targets, killing a head of state, and expanding geographically from the Middle East to the Indian Ocean and now drawing in NATO. Senior administration officials have repeatedly refused to rule out ground troops. Multiple members of Congress&nbsp;&mdash; from both parties&nbsp;&mdash; have expressed alarm at the open-ended nature of this commitment.</p>
+
+    <p class="reveal">And here is the part every family in America should know: Three days before the first bombs fell, Iran's Foreign Minister publicly stated a historic agreement to avert war was &ldquo;within reach.&rdquo; Oman's foreign minister confirmed Iran had agreed to never stockpile enriched uranium and accept full international verification. Negotiations were actively underway in Geneva. The strikes began while diplomats were still at the table. We had a path to peace. We chose the other road. Just as we did in Vietnam, where diplomatic channels existed throughout but were sidelined because key decision-makers had already chosen war.</p>
+
+    <!-- THEY WILL NOT BOW DOWN -->
+    <h2 class="section-heading reveal">They Will Not Bow Down</h2>
+
+    <p class="reveal">I need Americans to understand something about the region of the world we have just invaded. The people of Iran have a civilization stretching back thousands of years. They have survived the Mongol Empire, the British Empire, a U.S.-backed coup in 1953, an eight-year war with Iraq during which the world armed their enemy, and decades of crippling sanctions. They did not break. They did not bow.</p>
+
+    <p class="reveal emphasis-line">They will not bow now.</p>
+
+    <p class="reveal">This is not a population poised to collapse under airstrikes and accept a government designed in Washington. History tells us this with absolute clarity. The British learned it. The Soviets learned it in Afghanistan. We learned it in Vietnam, in Iraq and in Afghanistan ourselves&nbsp;&mdash; 20 years and trillions of dollars later, with nothing to show for it but grief.</p>
+
+    <p class="reveal">Iran is a nation of 88 million people spread across a landmass three times the size of Iraq, with mountainous terrain, a sophisticated military, proxy networks across the entire region and a population&nbsp;&mdash; whatever their feelings about their own government&nbsp;&mdash; who will unite against a foreign invader. This is not speculation. This is what happens every single time. History does not have a single example of a Middle Eastern nation being successfully reshaped by Western military force into a stable, friendly democracy. Not one.</p>
+
+    <p class="reveal emphasis-line">So what is the endgame?</p>
+
+    <p class="reveal">If the objective is regime change, who takes over? What prevents the same power vacuum that created ISIS after we toppled Saddam Hussein? If the objective is nuclear disarmament, we had negotiations underway&nbsp;&mdash; why did we abandon them? If the objective is &ldquo;eliminating threats,&rdquo; when will we know the threats are eliminated? What does &ldquo;mission accomplished&rdquo; look like? Because I watched a president stand under that banner in 2003, and American troops didn't leave Iraq for another eight years. We still have troops there today.</p>
+
+    <p class="reveal">Without answers to these questions, we are asking American families to sacrifice their sons and daughters for a war with no defined ending. My father's generation was asked to do the same thing. It did not end well&nbsp;&mdash; for anyone.</p>
+
+    <!-- WAR WITHOUT BORDERS -->
+    <h2 class="section-heading reveal">A War Without Borders</h2>
+
+    <p class="reveal">Vietnam bled into Laos and Cambodia without congressional authorization. This conflict has already spilled across more borders in six days than Vietnam did in five years. Iranian missiles have struck targets in Bahrain, Kuwait, Qatar, Saudi Arabia, the UAE and Oman. Israel has invaded Lebanon and is bombing Beirut. A warship was sunk near Sri Lanka. NATO shot down an Iranian missile heading toward Turkey&nbsp;&mdash; the first time this conflict has directly threatened a NATO member. Drones struck Azerbaijan, prompting its president to call it &ldquo;an act of terror.&rdquo; Qatar is evacuating residents near the U.S. Embassy. An Iranian drone strike shut down Qatar's liquefied natural gas exports, triggering a potential energy crisis from India to Italy. Hezbollah, the Houthis, and Iraqi militias have activated. The CIA is reportedly working to arm Kurdish forces for cross-border operations into Iran.</p>
+
+    <p class="reveal">And this is only the Middle East. In a separate hemisphere entirely, the U.S. is simultaneously running joint military operations in Ecuador, following the military capture of Venezuela's president and a six-month campaign of strikes on suspected drug boats across the Caribbean killing over 150 people. The United States is not just at war. It is projecting military force across the globe with no congressional authorization for any of it.</p>
+
+    <p class="reveal">And looming behind all of it: China and Russia. Both have condemned the U.S. and Israeli strikes. Both have strategic and economic ties to Iran. China receives roughly 14 percent of its seaborne crude oil from Iran. Russia has been supplying Iran with advanced fighter jets and satellite systems. Strikes on Iranian ports and infrastructure threaten trade corridors both nations depend on. Canada's Prime Minister said he could not &ldquo;categorically rule out participation&rdquo; in the conflict. The war is pulling the world in.</p>
+
+    <p class="reveal">So far, neither China nor Russia has intervened militarily, and their restraint is the only reason this has not already become something far worse. But restraint is not guaranteed. Every new front narrows the margin for a catastrophic miscalculation. A conflict expanding this fast, led by reaction rather than reflection, does not need a grand strategy to become a world war. It just needs one wrong domino.</p>
+
+    <p class="reveal">This is not about politics. This is about whether the next domino that falls is the one that changes everything&nbsp;&mdash; not just for America, but for the entire world.</p>
+
+    <!-- AN AWAKENING -->
+    <h2 class="section-heading reveal">An Awakening, Not an Argument</h2>
+
+    <p class="reveal">I am not here to argue. I am here to sound an alarm.</p>
+
+    <p class="reveal">To Congress&nbsp;&mdash; every member, regardless of party: Do your job. The Constitution gives you the authority and the responsibility to decide when this nation goes to war. Use it. Vote on a formal Authorization for the Use of Military Force. Define the objectives. Set the boundaries. Create the accountability not currently in place. If this war is justified, then make the case to the American people and vote for it openly. If it is not, then have the courage to say so. You swore an oath to the Constitution, not to any president. Act like it.</p>
+
+    <p class="reveal">To my fellow Americans: Call your representatives. Not tomorrow. Today. Do not let them tell you this is partisan. A mother burying her son in uniform does not care which party started the war. A child growing up with a father hollowed out by combat does not care who was in the White House when the first bomb fell. I know, because I was that child. The damage is the same regardless of the letter next to someone's name.</p>
+
+    <p class="reveal">To the journalists covering this: Keep asking the questions without good answers. What are the objectives? What is the exit strategy? What is the legal authority? Who is accountable? These are the questions not asked loudly enough in 1964, and 58,000 American families paid the price.</p>
+
+    <p class="reveal">And to every parent, grandparent, teacher and mentor reading this: We are the ones who taught our children that actions have consequences, history matters and doing the right thing is rarely the easy thing. It is time to live that lesson out loud.</p>
+
+    <!-- CLOSING -->
+    <div class="closing-section reveal">
+      <p>My father spent 30 months total in Vietnam and never told me what happened there, even when I asked. The stories of what he fought and lived through are gone forever. But the lessons of the political climate that sent him there cannot be ignored.</p>
+
+      <p class="closing-questions">Are we really willing to do this again?<br>To send another generation into a long-term conflict for reasons we cannot fully understand&nbsp;&mdash; when diplomacy had already started?<br>Against a people who will not surrender, in a region never once bending to foreign invasion?<br>With no plan for how it ends?</p>
+
+      <p class="closing-questions" style="font-size: 1.4rem; color: var(--text-primary); font-weight: 700;">Another twenty years of loss?<br>Not just for America&nbsp;&mdash; for the world?</p>
+
+      <p class="closing-final">We have seen this war before.<br><span style="font-weight: 400; font-size: 1.2rem; color: var(--text-secondary);">The question is whether we have the courage&nbsp;&mdash; all of us, together, beyond party&nbsp;&mdash;<br>to stop it before it becomes the next generation's Vietnam. Or worse.</span></p>
+    </div>
+
+    <!-- AUTHOR BIO -->
+    <div class="author-bio reveal">
+      <p><strong>Yvonne Okker-Padilla</strong> is one of five daughters of a 20-year Army veteran who served two tours in Vietnam as a member of Special Forces and lost his life to cancer at age 66. She is a former educator of 26 years. She is a mother of four, grandmother of four and a resident of Colorado Springs, Colorado.</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section reveal">
+      <h3>Make Your Voice Heard</h3>
+      <p>Call the US Capitol Switchboard to reach your senators and representatives. Tell them you remember Vietnam. Tell them to vote on a formal Authorization for the Use of Military Force.</p>
+      <span class="cta-phone">(202) 224-3121</span>
+    </div>
+
+  </article>
+
+  <footer>
+    <p>&copy; 2026 Yvonne Okker-Padilla. All rights reserved.<br>This essay may be shared freely with attribution.</p>
+  </footer>
+
+  <script>
+    // Scroll-triggered reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
